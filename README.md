@@ -1,6 +1,8 @@
 cgi-node
 ========
 
+<i>* with minor modifications for Synchronet BBS compatibility. - echicken</i>
+
 CGI-Node is designed to replace PHP on any shared web hosting site.
 
 CGI-Node provides the ability to run JavaScript on any web server just like PHP as a CGI using Node.js. 
