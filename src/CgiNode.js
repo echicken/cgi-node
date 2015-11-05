@@ -23,6 +23,11 @@ SOFTWARE.
 
 @Author: Uei Richo
 @Email: Uei.Richo@gmail.com
+
+	echicken's notes:
+	- Modified 'onReady' function to use CgiNodeConfig.ScriptPath rather than
+	  process.env.PATH_TRANSLATED
+
 */
 
 // Add the required modules.
@@ -68,7 +73,7 @@ process.on('exit', function(code)
 cgiNodeContext = new CgiHttpContext();
 
 // Create a callback function that will get called when everything is loaded and ready to go. This will execute the script.
-var onReady = function() { cgiNodeContext.include(process.env.PATH_TRANSLATED); };
+var onReady = function() { cgiNodeContext.include(CgiNodeConfig.ScriptPath); };
 
 // TODO: remove this when the POST parser is done.
 cgiNodeContext.request.method = 'GET';

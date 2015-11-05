@@ -27,6 +27,13 @@ SOFTWARE.
  This is the global configuration object for CgiNode. 
  
  NOTE: It is not in a JSON file because we want to compile it directly within the final cig-node.js file to optimize load time.
+
+	echicken's notes:
+
+	- Modified for use with the Synchronet BBS webserver
+	- Added ScriptPath property to CgiNodeConfig
+	- Use process.env.SCRIPT_FILENAME rather than process.env.PATH_TRANSLATED
+
 */
 var CgiNodeConfig = 
 {
@@ -41,5 +48,7 @@ var CgiNodeConfig =
 
 	SessionCookie: 'CGI-NODE-SESSIONID',
 	SessionTimeOut: 15*60, // 15 minutes
-	SessionPath: 'D:/Programs/nodejs/sessions/'
+	SessionPath: '/tmp/cgi-node/sessions/',
+
+	ScriptPath: process.env.SCRIPT_FILENAME
 };

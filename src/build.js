@@ -26,6 +26,10 @@ SOFTWARE.
 
  The build class is responsible for concatenating all the source code into one file and optimizing it if specified.
  This will help greatly reduce the file size and optimize performance.
+
+	echicken's notes:
+	- Using nodeExecLinuxPath by default
+
 */
 function CgiNodeBuilder()
 {
@@ -156,4 +160,4 @@ var output = '../cgi-bin/cgi-node';
 
 // Create the build class and run it.
 var build = new CgiNodeBuilder();
-build.run(files, output, nodeExecPathWindows);
+build.run(files, output, nodeExecPathLinux);
